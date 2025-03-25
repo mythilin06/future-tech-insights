@@ -1,0 +1,190 @@
+<html>
+<head>
+    <title>Future Tech Insights</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-text">
+        <h1>Welcome to Future Tech Insights</h1>
+        <p>Your go-to source for the latest in emerging technologies!</p> 
+        <br>
+        <video src="Emerging tech.mp4" controls></video>
+<p><b>Next Tech Conference Countdown:</b> <span id="countdown"></span></p>
+    </div>
+</section>
+
+ <section id="about-us" class="about-us">
+        <h2>Our Mission</h2>
+        <p>Welcome to Future Tech Insights, your go-to destination for the latest insights in technology, AI advancements, software development, and digital trends. Our mission is to empower tech enthusiasts, professionals, and learners with high-quality content that keeps them ahead in the ever-evolving tech landscape. We are dedicated to providing in-depth analyses, expert opinions, and practical guides to help our readers stay informed and make data-driven decisions.</p>
+
+        
+        <h3><i>Popular Tech Categories</i></h3>
+        <table>
+            <tr>
+<th>Category</th>
+<th>Description</th>
+</tr>
+            <tr>
+<td>Artificial Intelligence</td>
+<td>Latest developments in AI, machine learning, and deep learning.</td>
+</tr>
+            <tr>
+<td>Software Development</td>
+<td>Programming tutorials, frameworks, and best coding practices.</td>
+</tr>
+            <tr>
+<td>Cybersecurity</td>
+<td>Updates on online security, ethical hacking, and data protection.</td>
+</tr>
+<tr>
+<td>Cloud Computing</td>
+<td>Insights into cloud services, architecture, and deployment.</td>
+</tr>
+<tr>
+<td>Gadgets & Reviews</td>
+<td>Reviews of the latest gadgets, devices, and software tools.</td>
+</tr>
+<tr>
+<td>Blockchain & Crypto</td>
+<td>Trends and insights on blockchain technology and cryptocurrencies.</td>
+</tr>
+        </table>
+
+        
+        <h3>Recent Articles</h3>
+        <ul>
+            <li><a href="https://expertbeacon.com/chatgpt-vs-google-gemini-the-battle-of-ai-chatbots-in-2024">The Rise of AI Chatbots: OpenAI vs. Gemini</a></li>
+            <li><a href="https://academiamag.com/top-10-programming-languages-for-2025">Top 10 Programming Languages to Learn in 2025</a></li>
+            <li><a href="https://www.technologyreview.com/2025/01/08/1109188/whats-next-for-ai-in-2025">What’s Next for AI in 2025</a></li>
+        </ul>
+    </section>
+
+<section id="gallery" class="gallery">
+    <h2>Tech Visuals</h2>
+    <div class="gallery-slider">
+        <div class="slide" id="slide-1">
+            <img src="https://www.slideegg.com/image/catalog/87055-cyber-security-infographics.png" alt="OpenAI Infographic" width="300">
+            <p class="caption">OpenAI Infographic - Exploring AI Trends</p>
+        </div>
+        <div class="slide" id="slide-2">
+            <img src="https://static.wixstatic.com/media/49ad42_70e3b35714ed4cceb7b7a049a307b7ee~mv2.jpeg" alt="OpenAI Vs Gemini" width="300">
+            <p class="caption">OpenAI vs Gemini - The AI Battle</p>
+        </div>
+        <div class="slide" id="slide-3">
+            <img src="https://shelf.io/wp-content/uploads/2023/11/2023.11-Altman-5.png" alt="Tech Conference" width="300">
+            <p class="caption">Tech Conference 2025 - Innovation at Its Peak</p>
+        </div>
+        <div class="slide" id="slide-4">
+            <img src="https://tii.imgix.net/production/articles/11067/e385b464-747b-429b-9910-bef5c93b62fa.png" alt="Gemini Summit" width="300">
+            <p class="caption">Gemini Summit - Next-Gen AI Insights</p>
+        </div>
+    </div>
+    <h3>Latest Podcast</h3>
+    <audio controls>
+        <source src="openAI.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</section>
+<section id="contact-us" class="contact-us">
+    <h2>Get in Touch</h2>
+    <form id="newsletter-form">
+        <label for="email">Subscribe to our Newsletter:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+
+    <h3>Suggest a Topic</h3>
+    <form id="topic-form">
+        <textarea id="topic" name="topic" rows="4" placeholder="Suggest a future article topic"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 Future Tech Insights</p>
+    <button id="back-to-top" onclick="scrollToTop()">Back to Top</button>
+</footer>
+
+<script>
+function startCountdown() {
+    const targetDate = new Date("2025-03-30T00:00:00").getTime();
+    const countdownElement = document.getElementById("countdown");
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const remaining = targetDate - now;
+
+        if (remaining <= 0) {
+            countdownElement.innerHTML = "The event has started!";
+        } else {
+            const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function addFormEventListeners() {
+    const forms = ["newsletter-form", "topic-form"];
+
+    forms.forEach((formId) => {
+        const form = document.getElementById(formId);
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            alert("Submission Successful! Thank you for reaching out to Future Tech Insights.");
+            form.reset();
+        });
+    });
+}
+
+function startGallerySlider() {
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = i === index ? "block" : "none";
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    showSlide(currentSlide);
+    setInterval(nextSlide, 3000);
+}
+
+window.onload = function () {
+    startCountdown();
+    addFormEventListeners();
+    startGallerySlider();
+};
+</script>
+
+</body>
+</html>
